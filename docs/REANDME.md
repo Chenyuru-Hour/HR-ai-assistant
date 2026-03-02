@@ -11,9 +11,9 @@ docs/
 │ ├── deepseek-api.md
 │ └── nvidia-api.md
 ├── week1/ ← 每周学习笔记
-│ ├── alice-notes.md
-│ ├── bob-notes.md
-│ └── carol-notes.md
+│ ├── your name-notes.md
+│ ├── your name-notes.md
+│ └── your name-notes.md
 ├── week2/
 ├── ...
 ├── retrospectives/ ← 每周复盘
