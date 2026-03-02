@@ -35,6 +35,18 @@ cd HR-ai-assistant
 
 ### 后端启动
 
+```bash
+cd backend
+python -m venv .venv
+# Windows PowerShell
+.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+copy .env.example .env
+uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+```
+
+健康检查地址：`http://127.0.0.1:8000/api/v1/health`
+
 ## 📁 目录结构
 
 - docs/ —— 学习笔记与文档
