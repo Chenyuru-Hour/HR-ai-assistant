@@ -1,7 +1,7 @@
 # HR-ai-assistant
 
 应届生团队12周青训项目 —— 从零开始的大模型应用开发
-用于管理人事办公AI助手项目的学习进度
+用于管理人事办公AI助手项目的学习进度，以及后端程序
 
 ---
 
@@ -39,7 +39,6 @@ cd HR-ai-assistant
 
 - docs/ —— 学习笔记与文档
 - backend/ —— FastAPI 后端
-- frontend/ —— Vue3 前端
 - notebooks/ —— Jupyter 实验笔记
 - data/ —— 数据样本（脱敏）
 - scripts/ —— 自动化脚本
