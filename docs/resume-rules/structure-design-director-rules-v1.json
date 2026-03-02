@@ -1,0 +1,78 @@
+{
+  "version": "v1",
+  "position": "结构设计主管",
+  "department": "技术部",
+  "hard_filters": {
+    "education_min": "专科及以上",
+    "education_major": ["机械设计", "工业制造", "工业自动化"],
+    "industry_experience_years": 5,
+    "same_position_experience_years": 1,
+    "managed_staff_count": 2,
+    "software_basic_capability_required": true,
+    "technical_coverage_required": ["机械结构设计", "材料力学", "加工工艺"]
+  },
+  "soft_filters": {
+    "mechanical_design_skill": {
+      "weight": 0.30,
+      "min_score": 3,
+      "description": "结构方案设计、深化能力；熟悉结构力学、材料属性、常见机械加工工艺"
+    },
+    "drawing_implementation_skill": {
+      "weight": 0.25,
+      "min_score": 3,
+      "description": "独立完成机械加工/施工图纸设计、出图及内部评审组织能力"
+    },
+    "process_and_material_knowledge": {
+      "weight": 0.15,
+      "min_score": 3,
+      "description": "编写工艺文件、编制材料清单（BOM）能力；熟悉常用结构件材料与选型"
+    },
+    "team_management_capability": {
+      "weight": 0.15,
+      "min_score": 3,
+      "description": "小组团队建设、成员辅导、日常管理、绩效考核等实践"
+    },
+    "project_lifecycle_experience": {
+      "weight": 0.10,
+      "min_score": 4,
+      "description": "从客户对接→结构方案→图纸→加工→现场安装→验收全流程参与经验"
+    },
+    "benchmark_company_background": {
+      "weight": 0.05,
+      "min_score": 3,
+      "description": "对标单位工作经验（优先项）"
+    },
+    "doc_knowledge_management": {
+      "weight": 0.05,
+      "min_score": 2,
+      "description": "技术资料汇总归档、资料库建设经验"
+    }
+  },
+  "scoring_rules": {
+    "score_calculation": "sum(soft_score_i * weight_i) * 20",
+    "score_threshold": 75,
+    "reject_on_hard_fail": true,
+    "gray_review_trigger": {
+      "benchmark_score": 5,
+      "total_score_range": [70, 74]
+    }
+  },
+  "keywords_extraction": {
+    "job_duties": [
+      "结构方案设计及深化",
+      "机械加工/施工图纸设计与评审",
+      "编写工艺文件与材料清单",
+      "对接加工厂技术支持",
+      "现场结构安装调试支持",
+      "技术变更配合",
+      "项目验收资料编制",
+      "客户技术培训",
+      "小组团队建设与管理",
+      "绩效考核与工作计划指导"
+    ],
+    "required_software": [
+      "主流工业设计软件（如AutoCAD/SolidWorks/CATIA）",
+      "办公软件（Office/WPS）"
+    ]
+  }
+}

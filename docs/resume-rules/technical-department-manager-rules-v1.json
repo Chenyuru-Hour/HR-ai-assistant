@@ -1,0 +1,76 @@
+{
+  "version": "v1",
+  "position": "技术部经理",
+  "department": "技术部",
+  "hard_filters": {
+    "education_min": "专科及以上",
+    "education_major": ["机械设计", "电气技术", "工业自动化", "工业制造"],
+    "industry_experience_years": 8,
+    "same_position_experience_years": 3,
+    "managed_staff_count": 5,
+    "software_basic_capability_required": true,
+    "technical_coverage_required": ["机械加工", "电气自动化","材料力学"]
+  },
+  "soft_filters": {
+    "mechanical_design_skill": {
+      "weight": 0.20,
+      "min_score": 3,
+      "description": "结构力学、材料属性、加工工艺等"
+    },
+    "electrical_design_skill": {
+      "weight": 0.20,
+      "min_score": 3,
+      "description": "电气原理、配线、PLC编程、电/液/气驱动"
+    },
+    "tender_solution_capacity": {
+      "weight": 0.15,
+      "min_score": 3,
+      "description": "技术方案设计、投标文件编制经验"
+    },
+    "team_management_capability": {
+      "weight": 0.15,
+      "min_score": 3,
+      "description": "团队建设、绩效考核、技能辅导"
+    },
+    "project_lifecycle_experience": {
+      "weight": 0.15,
+      "min_score": 4,
+      "description": "需求→方案→图纸→加工→安装→验收全流程"
+    },
+    "benchmark_company_background": {
+      "weight": 0.10,
+      "min_score": 3,
+      "description": "对标单位工作经验（优先项）"
+    },
+    "doc_knowledge_management": {
+      "weight": 0.05,
+      "min_score": 2,
+      "description": "技术资料归档、资料库建设"
+    }
+  },
+  "scoring_rules": {
+    "score_calculation": "sum(soft_score_i * weight_i) * 20",
+    "score_threshold": 75,
+    "reject_on_hard_fail": true,
+    "gray_review_trigger": {
+      "benchmark_score": 5,
+      "total_score_range": [70, 74]
+    }
+  },
+  "keywords_extraction": {
+    "job_duties": [
+      "技术方案设计",
+      "图纸组织评审",
+      "投标文件编制",
+      "现场安装调试指导",
+      "团队建设",
+      "绩效考核",
+      "技术资料归档",
+      "跨部门协调"
+    ],
+    "required_software": [
+      "主流工业设计软件（如AutoCAD/SolidWorks/EPLAN）",
+      "办公软件（Office/WPS）"
+    ]
+  }
+}
