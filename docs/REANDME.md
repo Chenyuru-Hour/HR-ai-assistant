@@ -10,6 +10,7 @@ docs/
 │ ├── qwen-api.md
 │ ├── deepseek-api.md
 │ └── nvidia-api.md
+├── resume-rules/ ← 各岗位的简历规则清单
 ├── week1/ ← 每周学习笔记
 │ ├── your name-notes.md
 │ ├── your name-notes.md
