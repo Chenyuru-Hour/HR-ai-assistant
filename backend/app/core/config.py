@@ -12,8 +12,11 @@ class Settings(BaseSettings):
 
     cors_allow_origins: str = "*"
 
-    llm_provider: str = "qwen"
+    llm_provider: str = "deepseek"
+    llm_base_url: str = "https://runanytime.hxi.me"
     llm_api_key: str = ""
+    llm_model: str = "deepseek/deepseek-v3.2"
+    llm_timeout_seconds: int = 30
 
     model_config = SettingsConfigDict(
         env_file=".env",
@@ -27,6 +30,10 @@ class Settings(BaseSettings):
         if raw == "*":
             return ["*"]
         return [origin.strip() for origin in raw.split(",") if origin.strip()]
+
+    @property
+    def llm_chat_completions_url(self) -> str:
+        return  f"{self.llm_base_url.rstrip('/')}/v1/chat/completions"
 
 
 @lru_cache
