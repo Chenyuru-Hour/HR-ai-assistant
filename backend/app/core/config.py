@@ -33,7 +33,7 @@ class Settings(BaseSettings):
 
     @property
     def llm_chat_completions_url(self) -> str:
-        return  f"{self.llm_base_url.rstrip('/')}/v1/chat/completions"
+        return f"{self.llm_base_url.rstrip('/')}/v1/chat/completions"
 
 
 @lru_cache
