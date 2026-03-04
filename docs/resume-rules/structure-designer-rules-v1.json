@@ -1,0 +1,80 @@
+{
+  "version": "v1",
+  "position": "结构设计师",
+  "department": "技术部",
+  "supervisor": "结构设计主管",
+  "hard_filters": {
+    "education_min": "专科及以上",
+    "education_major": ["机械设计制造及其自动化", "工业设计", "机械工程", "工业自动化", "模具设计"],
+    "industry_experience_years": 2,
+    "same_position_experience_years": 2,
+    "managed_staff_count": 0,
+    "software_basic_capability_required": true,
+    "technical_coverage_required": ["机械结构设计", "机械加工工艺"]
+  },
+  "soft_filters": {
+    "3d_modeling_skill": {
+      "weight": 0.25,
+      "min_score": 3,
+      "description": "SolidWorks/ProE等三维建模能力"
+    },
+    "drawing_standard_compliance": {
+      "weight": 0.20,
+      "min_score": 3,
+      "description": "图纸规范性、公差标注、符合企业标准"
+    },
+    "bom_material_knowledge": {
+      "weight": 0.15,
+      "min_score": 2,
+      "description": "BOM编制、材料选型、成本意识"
+    },
+    "manufacturing_coordination": {
+      "weight": 0.15,
+      "min_score": 3,
+      "description": "理解CNC/钣金/焊接工艺，能对接外协厂"
+    },
+    "field_support_capability": {
+      "weight": 0.10,
+      "min_score": 2,
+      "description": "出差意愿、现场安装调试支持经验"
+    },
+    "doc_knowledge_management": {
+      "weight": 0.10,
+      "min_score": 2,
+      "description": "技术文档归档、版本管理、资料库建设"
+    },
+    "benchmark_company_background": {
+      "weight": 0.05,
+      "min_score": 1,
+      "description": "头部客户/对标企业工作经验"
+    }
+  },
+  "scoring_rules": {
+    "score_calculation": "sum(soft_score_i * weight_i) * 20",
+    "score_threshold": 70,
+    "reject_on_hard_fail": true,
+    "gray_review_trigger": {
+      "benchmark_score": 5,
+      "total_score_range": [65, 69]
+    }
+  },
+  "keywords_extraction": {
+    "job_duties": [
+      "结构方案设计",
+      "三维建模",
+      "工程图出图",
+      "BOM清单编制",
+      "材料选型",
+      "加工工艺对接",
+      "现场技术支持",
+      "技术资料归档"
+    ],
+    "required_software": [
+      "SolidWorks",
+      "AutoCAD",
+      "ProE/Creo",
+      "NX/UG",
+      "Office"
+    ]
+  }
+}

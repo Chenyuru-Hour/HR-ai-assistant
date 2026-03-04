@@ -1,0 +1,78 @@
+{
+  "version": "v1",
+  "position": "财务综合岗",
+  "department": "财务部",
+  "hard_filters": {
+    "education_min": "专科及以上",
+    "education_major": ["会计", "金融", "财务管理"],
+    "industry_experience_years": 2,
+    "same_position_experience_years": 1,
+    "managed_staff_count": 0,
+    "software_basic_capability_required": true,
+    "technical_coverage_required": [
+      "资金收付与银行对接",
+      "费用报销审核",
+      "税务申报",
+      "会计凭证处理"
+    ]
+  },
+  "soft_filters": {
+    "fund_management_skill": {
+      "weight": 0.20,
+      "min_score": 3,
+      "description": "现金收付、银行结算、日记账登记、资金账户管理"
+    },
+    "expense_reimbursement_skill": {
+      "weight": 0.15,
+      "min_score": 3,
+      "description": "费用报销审核、原始凭证审核、报销流程执行"
+    },
+    "tax_handling_skill": {
+      "weight": 0.20,
+      "min_score": 3,
+      "description": "各项税金计算、申报、缴纳，与税务机关沟通"
+    },
+    "accounting_skill": {
+      "weight": 0.20,
+      "min_score": 3,
+      "description": "会计凭证制作、账簿登记、财务报表基础、成本核算"
+    },
+    "software_proficiency": {
+      "weight": 0.15,
+      "min_score": 3,
+      "description": "财务软件（金蝶/用友等）及Excel等办公软件应用"
+    },
+    "communication_collaboration_skill": {
+      "weight": 0.10,
+      "min_score": 3,
+      "description": "与内部部门、银行、税务等外部单位的沟通协调"
+    }
+  },
+  "scoring_rules": {
+    "score_calculation": "sum(soft_score_i * weight_i) * 20",
+    "score_threshold": 75,
+    "reject_on_hard_fail": true,
+    "gray_review_trigger": {
+      "any_skill_score": 4.5,
+      "total_score_range": [70, 74]
+    }
+  },
+  "keywords_extraction": {
+    "job_duties": [
+      "资金收付",
+      "现金银行日记账",
+      "会计凭证",
+      "税务申报",
+      "费用报销",
+      "银行业务",
+      "工资核算",
+      "社保个税",
+      "成本核算",
+      "档案管理"
+    ],
+    "required_software": [
+      "财务软件（如金蝶/用友）",
+      "办公软件（Excel/Word）"
+    ]
+  }
+}

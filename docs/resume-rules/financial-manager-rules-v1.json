@@ -1,0 +1,76 @@
+{
+  "version": "v1",
+  "position": "财务经理/主管",
+  "department": "财务部",
+  "hard_filters": {
+    "education_min": "专科及以上",
+    "education_major": ["会计", "金融", "财务管理", "审计"],
+    "industry_experience_years": 5,
+    "same_position_experience_years": 3,
+    "managed_staff_count": 2,
+    "software_basic_capability_required": true,
+    "technical_coverage_required": [
+      "财务核算与成本管理",
+      "税务筹划与申报",
+      "预算管理与资金管控"
+    ]
+  },
+  "soft_filters": {
+    "financial_management_skill": {
+      "weight": 0.20,
+      "min_score": 3,
+      "description": "制定财务制度、内控办法，参与经营决策，完善管理体系"
+    },
+    "budget_cost_control_skill": {
+      "weight": 0.20,
+      "min_score": 3,
+      "description": "预算编制、成本核算、成本分析、费用监控、降本增效"
+    },
+    "tax_planning_skill": {
+      "weight": 0.20,
+      "min_score": 3,
+      "description": "税务申报、税收优惠申请、应对财税检查、合规风险控制"
+    },
+    "fund_management_skill": {
+      "weight": 0.15,
+      "min_score": 3,
+      "description": "资金筹措、往来账款控制、合同财务审核、流动性管理"
+    },
+    "team_management_capability": {
+      "weight": 0.15,
+      "min_score": 3,
+      "description": "部门计划制定、团队建设、教育培训、绩效考核，内外部协调"
+    },
+    "benchmark_company_background": {
+      "weight": 0.10,
+      "min_score": 1,
+      "description": "对标单位工作经验（优先加分项）"
+    }
+  },
+  "scoring_rules": {
+    "score_calculation": "sum(soft_score_i * weight_i) * 20",
+    "score_threshold": 75,
+    "reject_on_hard_fail": true,
+    "gray_review_trigger": {
+      "benchmark_score": 4,
+      "total_score_range": [70, 74]
+    }
+  },
+  "keywords_extraction": {
+    "job_duties": [
+      "财务管理制度",
+      "预算编制与考核",
+      "成本核算与分析",
+      "税务筹划与申报",
+      "资金管理",
+      "财务分析",
+      "团队管理",
+      "内控合规",
+      "对外协调"
+    ],
+    "required_software": [
+      "财务软件（如金蝶/用友/SAP）",
+      "办公软件（Excel/Word/PPT）"
+    ]
+  }
+}

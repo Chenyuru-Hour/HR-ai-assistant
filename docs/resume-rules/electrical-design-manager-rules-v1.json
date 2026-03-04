@@ -1,0 +1,73 @@
+{
+  "version": "v1",
+  "position": "电气设计主管",
+  "department": "技术部",
+  "hard_filters": {
+    "education_min": "专科及以上",
+    "education_major": ["电气设计", "电气技术", "工业自动化"],
+    "industry_experience_years": 5,
+    "same_position_experience_years": 1,
+    "managed_staff_count": 2,
+    "software_basic_capability_required": true,
+    "technical_coverage_required": ["电气原理与配线", "自动化电气编程", "电驱/液驱/气驱应用"]
+  },
+  "soft_filters": {
+    "electrical_design_skill": {
+      "weight": 0.30,
+      "min_score": 3,
+      "description": "电气原理图、接线图设计及电气元器件选型能力"
+    },
+    "automation_programming_skill": {
+      "weight": 0.25,
+      "min_score": 3,
+      "description": "PLC编程、控制算法实现及自动化控制逻辑开发"
+    },
+    "drive_system_application": {
+      "weight": 0.15,
+      "min_score": 3,
+      "description": "电驱动、液压驱动、气动驱动系统的综合应用能力"
+    },
+    "team_management_capability": {
+      "weight": 0.15,
+      "min_score": 3,
+      "description": "小组成员辅导、工作计划编制、绩效考核及日常管理"
+    },
+    "project_lifecycle_experience": {
+      "weight": 0.10,
+      "min_score": 4,
+      "description": "电气方案到加工指导、现场安装调试支持、最终验收的全流程经验"
+    },
+    "benchmark_company_background": {
+      "weight": 0.05,
+      "min_score": 3,
+      "description": "对标单位工作经验（优先加分项）"
+    }
+  },
+  "scoring_rules": {
+    "score_calculation": "sum(soft_score_i * weight_i) * 20",
+    "score_threshold": 75,
+    "reject_on_hard_fail": true,
+    "gray_review_trigger": {
+      "benchmark_score": 5,
+      "total_score_range": [70, 74]
+    }
+  },
+  "keywords_extraction": {
+    "job_duties": [
+      "电气方案设计及深化",
+      "控制程序编写",
+      "电气加工图纸评审",
+      "材料清单(BOM)编制",
+      "加工厂技术支持",
+      "现场安装调试人员指导",
+      "技术资料库建设",
+      "小组团队建设",
+      "工作计划与绩效考核"
+    ],
+    "required_software": [
+      "主流工业设计软件（如EPLAN/AutoCAD Electrical）",
+      "PLC编程软件（如TIA Portal/Step7/GX Works）",
+      "办公软件（Office/WPS）"
+    ]
+  }
+}
