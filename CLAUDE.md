@@ -28,8 +28,8 @@ HR-ai-assistant/
 │   │   │   └── endpoints/       # 端点实现
 │   │   │       ├── health.py    # 健康检查
 │   │   │       ├── llm.py       # LLM 测试
-│   │   │       ├── resume.py    # 简历上传（待实现）
-│   │   │       ├── parse.py     # 简历解析（待实现）
+│   │   │       ├── resume.py    # 简历上传
+│   │   │       ├── parse.py     # 文本提取
 │   │   │       └── score.py     # 评分打分（待实现）
 │   │   ├── core/                # 核心模块
 │   │   │   ├── config.py        # 配置管理
@@ -40,7 +40,8 @@ HR-ai-assistant/
 │   │   │   └── resume.py        # 简历相关模型
 │   │   └── services/            # 服务层（业务逻辑）
 │   │       ├── llm_client.py    # LLM API 封装
-│   │       └── file_parser.py   # PDF/Word 文本提取
+│   │       ├── file_parser.py   # PDF/Word 文本提取
+│   │       └── resume_parser.py # AI 简历解析
 │   ├── tests/                   # 单元测试
 │   ├── uploads/                 # 上传文件存储（待创建）
 │   ├── .env                     # 环境变量（不提交）
@@ -106,8 +107,9 @@ uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 |------|------|------|------|
 | GET | `/api/v1/health` | 健康检查 | ✅ 已实现 |
 | POST | `/api/v1/llm/test` | LLM 连接测试 | ✅ 已实现 |
-| POST | `/api/v1/resume/upload` | 简历上传 | ⏳ 待实现 |
-| POST | `/api/v1/parse/extract` | 文本提取 | ⏳ 待实现 |
+| POST | `/api/v1/resume/upload` | 简历上传 | ✅ 已实现 |
+| POST | `/api/v1/parse/extract` | 文本提取 | ✅ 已实现 |
+| POST | `/api/v1/parse/analyze` | AI 简历解析 | ✅ 已实现 |
 | POST | `/api/v1/score` | 简历评分 | ⏳ 待实现 |
 
 ---
@@ -138,7 +140,7 @@ await client.close()
 
 ### 2. File Parser (`services/file_parser.py`)
 
-提取 PDF/Word 文件中的文本内容。
+提取 PDF/Word 文件中的文本内容，支持段落、表格、文本框。
 
 **使用示例**：
 ```python
@@ -146,6 +148,20 @@ from app.services.file_parser import parse_file
 
 result = parse_file("path/to/resume.pdf", "pdf")
 # 返回: {"total_pages": 2, "text": "提取的文本..."}
+```
+
+### 3. Resume Parser (`services/resume_parser.py`)
+
+调用大模型将简历文本解析为结构化 JSON 数据。
+
+**输出结构**：`basic_info`、`education`、`work_experience`、`projects`、`skills`
+
+**使用示例**：
+```python
+from app.services.resume_parser import parse_resume
+
+resume_data = await parse_resume(resume_text)
+# 返回: ResumeData 对象（包含姓名、学历、工作经历等）
 ```
 
 ---
@@ -166,7 +182,7 @@ LLM_PROVIDER=deepseek
 LLM_BASE_URL=https://api.deepseek.com
 LLM_API_KEY=your_api_key_here
 LLM_MODEL=deepseek-chat
-LLM_TIMEOUT_SECONDS=30
+LLM_TIMEOUT_SECONDS=120
 ```
 
 ---
@@ -203,8 +219,8 @@ LLM_TIMEOUT_SECONDS=30
 |------|----------|------|
 | 3/2 周一 | 搭建后端基础框架 | ✅ 已完成 |
 | 3/3 周二 | 封装大模型API统一调用接口，验证API连通性 | ✅ 已完成 |
-| 3/4 周三 | 实现PDF/Word简历文本抽取功能 | 🔄 进行中 |
-| 3/5 周四 | 开发AI简历解析功能（结构化数据提取）— 50% | ⏳ 待开始 |
+| 3/4 周三 | 实现PDF/Word简历文本抽取功能 | ✅ 已完成 |
+| 3/5 周四 | 开发AI简历解析功能（结构化数据提取）— 50% | ✅ 已完成 |
 | 3/6 周五 | 完成AI简历解析功能，样本验证与Prompt调优 — 100% | ⏳ 待开始 |
 | 3/7 周六 | 开发简历硬性条件过滤与加权打分逻辑 — 50% | ⏳ 待开始 |
 
@@ -276,4 +292,4 @@ black app/
 
 ---
 
-*最后更新：2026-03-04*
+*最后更新：2026-03-05*
